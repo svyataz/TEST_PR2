@@ -23,7 +23,7 @@ public class Lists {
 
         for (int i = 0; i < n; i++) {
             if (bin[i].length() != maxLen)
-                bin[i] = String.format("%" + maxLen + "s", bin[i]).replace(' ', '0').replace(' ', '0');
+                bin[i] = String.format("%" + maxLen + "s", bin[i]);
         }
         return bin;
     }
@@ -40,7 +40,7 @@ public class Lists {
 
     public static int maxArray(int[] a) {
 
-        int max = a[0]; // saves a bit of time
+        int max = 0;
 
         for (int j = 1; j < a.length; j++) {
             if (a[j] > max) {
@@ -58,7 +58,7 @@ public class Lists {
                     int swap = MyList[j];
                     MyList[j] = MyList[j + 1];
 
-                    MyList[j + 1] = swap;
+                    MyList[j] = swap;
                 }
             }
         }
@@ -71,7 +71,7 @@ public class Lists {
 
     public static int[] quickSort(int[] MyList, int low, int high) {
 
-        if (MyList.length == 0 || low >= high) return MyList;
+        if (low >= high) return MyList;
 
         int middle = low + (high - low) / 2;
         int border = MyList[middle];

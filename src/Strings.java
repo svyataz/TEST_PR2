@@ -9,7 +9,7 @@ public class Strings {
     }
 
     public static Boolean palindrome(String str){
-        String buff = new StringBuilder(str.substring((int)Math.ceil(str.length() / 2.0), str.length())).reverse().toString();
+        String buff = new StringBuilder(str.substring(str.length() / 2, str.length())).reverse().toString();
         if(str.substring(0, str.length() / 2).equals(buff)) {
             return true;
         }
@@ -17,13 +17,13 @@ public class Strings {
     }
 
     public static int counter(String str, String x){
-        return str.length() - str.replace(x, "").length();
+        return str.length() - str.replace(x, " ").length();
     }
 
     public static boolean isAlpha(String str) {
         char[] chars = str.toCharArray();
         for (char i : chars) {
-            if(!Character.isLetter(i)) {
+            if(Character.isLetter(i)) {
                 return false;
             }
         }
@@ -33,11 +33,11 @@ public class Strings {
     public static boolean isDigit(String str) {
         char[] chars = str.toCharArray();
         for (char i : chars) {
-            if(!Character.isDigit(i)) {
-                return false;
+            if(Character.isDigit(i)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static String splitting(String str){
@@ -46,7 +46,6 @@ public class Strings {
             if (i == Character.toUpperCase(i) && !buff.isEmpty() && Character.isLetter(i)) {
                 buff += " ";
             }
-            if (i == '_') i = ' ';
             buff += i;
         }
         return buff;
