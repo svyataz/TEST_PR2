@@ -3,14 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Lists {
-    public static void main(String[] args) {
-        int[] MyList = {12, 6, 413, 1, 153, 10, 10, 10, 10, 232343, 6454, 4, 10, 12312, 10};
-        System.out.println(Arrays.toString(quickSort(MyList)));
-        System.out.println(Arrays.toString(bubbleSort(MyList)));
-        System.out.println(counter(MyList, 10));
-        System.out.println(maxArray(MyList));
-        System.out.println(Arrays.toString(toBinary(MyList)));
-    }
+
     public static String[] toBinary(int[] MyList){
         int maxLen = 0;
         int n = MyList.length;
