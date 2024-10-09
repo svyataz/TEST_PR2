@@ -9,8 +9,7 @@ public class Strings {
     }
 
     public static Boolean palindrome(String str){
-        String buff = new StringBuilder(str.substring((int)Math.ceil(str.length() / 2.0), str.length())).reverse().toString();
-        if(str.substring(0, str.length() / 2).equals(buff)) {
+        String buff = new StringBuilder(str.substring(str.length() / 2, str.length())).reverse().toString();        if(str.substring(0, str.length() / 2).equals(buff)) {
             return true;
         }
         return false;

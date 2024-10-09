@@ -40,7 +40,7 @@ public class Lists {
 
     public static int maxArray(int[] a) {
 
-        int max = a[0]; // saves a bit of time
+        int max = 0;
 
         for (int j = 1; j < a.length; j++) {
             if (a[j] > max) {
