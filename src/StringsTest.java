@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -6,37 +7,67 @@ public class StringsTest {
 
     @Test
     public void palindrome() {
-        System.out.println(Strings.palindrome("FLFLF"));
-        System.out.println(Strings.palindrome("FLLF"));
-        System.out.println(Strings.palindrome("fffff"));
-        System.out.println(Strings.palindrome("flff"));
-        System.out.println(Strings.palindrome("FLFdd"));
+        boolean expected, actual;
+        expected = true;
+        actual = Strings.palindrome("FLFLF");
+        Assert.assertEquals(expected, actual);
+        expected = true;
+        actual = Strings.palindrome("FLLF");
+        Assert.assertEquals(expected, actual);
+        expected = true;
+        actual = Strings.palindrome("fffff");
+        Assert.assertEquals(expected, actual);
+        expected = false;
+        actual = Strings.palindrome("flff");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void counter() {
-        System.out.println(Strings.counter("fflfffdsFdfFF", "f"));
+        int expected = 6, actual;
+        actual = Strings.counter("fflfffdsFdfFF", "f");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void isAlpha() {
-        System.out.println(Strings.isAlpha("string"));
-        System.out.println(Strings.isAlpha("23"));
-        System.out.println(Strings.isAlpha("fg232"));
-        System.out.println(Strings.isAlpha("GFKKdf"));
+        boolean expected, actual;
+        expected = true;
+        actual = Strings.isAlpha("string");
+        Assert.assertEquals(expected, actual);
+        expected = false;
+        actual = Strings.isAlpha("23");
+        Assert.assertEquals(expected, actual);
+        expected = false;
+        actual = Strings.isAlpha("fg232");
+        Assert.assertEquals(expected, actual);
+        expected = true;
+        actual = Strings.isAlpha("GFKKdf");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void isDigit() {
-        System.out.println(Strings.isDigit("string"));
-        System.out.println(Strings.isDigit("23"));
-        System.out.println(Strings.isDigit("fg232"));
-        System.out.println(Strings.isDigit("-234"));
+        boolean expected, actual;
+        expected = false;
+        actual = Strings.isDigit("string");
+        Assert.assertEquals(expected, actual);
+        expected = true;
+        actual = Strings.isDigit("23");
+        Assert.assertEquals(expected, actual);
+        expected = false;
+        actual = Strings.isDigit("fg232");
+        Assert.assertEquals(expected, actual);
+        expected = false;
+        actual = Strings.isDigit("-234");
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void splitting() {
+        String expected = "Aasdfasdfsdaf sddfsafsd Fsd5334fsefsddf fsfsdsdff fsdf Fsdf F F F";
         String str = "Aasdfasdfsdaf_sddfsafsdFsd5334fsefsddf_fsfsdsdff_fsdfFsdfFFF";
-        System.out.println(Strings.splitting(str));
+        String actual = Strings.splitting(str);
+        Assert.assertEquals(expected, actual);
     }
 }
